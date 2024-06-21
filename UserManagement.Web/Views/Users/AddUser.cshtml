@@ -1,0 +1,42 @@
+﻿@model UserManagement.Web.Models.Users.CreateUser
+
+<h2 class="mb-3">Add User</h2>
+
+
+<form asp-action="AddUser" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label class="form-label">Forename</label>
+        <input class="form-control" asp-for="Forename" required>
+        <div class="invalid-feedback">
+            Please Enter Your Forename.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Surname</label>
+        <input class="form-control" asp-for="Surname" required>
+        <div class="invalid-feedback">
+            Please Enter Your Surname.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input class="form-control" asp-for="DateOfBirth" required>
+        <div class="invalid-feedback">
+            Please Enter Your Date of Birth.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input class="form-control" asp-for="Email" required>
+        <div class="invalid-feedback">
+            Please Enter Your Email.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 float-end">Add User</button>
+</form>
+
+<div>
+    <a asp-controller="Users" asp-action="Index" class="btn btn-primary"> Back to List </a>
+</div>
+
+

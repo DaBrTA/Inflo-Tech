@@ -1,0 +1,39 @@
+﻿@model UserManagement.Web.Models.Users.LogListViewModel
+
+@{
+    var model = Model.LogList;
+}
+
+<h2>User List</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserId</th>
+                <th>LogType</th>
+                <th>LogMessage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @model)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.UserId
+                    </td>
+                    <td>
+                        @item.LogType
+                    </td>
+                    <td>
+                        @item.LogMessage
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

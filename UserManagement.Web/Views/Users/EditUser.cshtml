@@ -1,0 +1,56 @@
+﻿@model UserManagement.Web.Models.Users.ViewUser
+
+@{
+    var model = Model;
+}
+
+<h2 class="mb-3">Edit User</h2>
+
+
+<form asp-action="EditUser" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label class="form-label">Forename</label>
+        <input class="form-control" name="Forename" value="@Model.Forename" required />
+        <div class="invalid-feedback">
+            Please Enter Your Forename.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Surname</label>
+        <input class="form-control" asp-for="Surname" value="@Model.Surname" required>
+        <div class="invalid-feedback">
+            Please Enter Your Surname.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input class="form-control" asp-for="DateOfBirth" value="@Model.DateOfBirth" required>
+        <div class="invalid-feedback">
+            Please Enter Your Date of Birth.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input class="form-control" asp-for="Email" value="@Model.Email" required>
+        <div class="invalid-feedback">
+            Please Enter Your Email.
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" class="form-check-input" asp-for="IsActive">
+        <label class="form-label">Is Active</label>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 float-end">Submit Edit</button>
+</form>
+
+<div>
+    <a asp-controller="Users" asp-action="Index" class="btn btn-primary"> Back to List </a>
+</div>
+
+<script>
+    if (document.getElementById('IsActive').checked) {
+        document.getElementById('IsActive').checked
+    } else {
+        !document.getElementById('IsActive').checked
+    }
+</script>

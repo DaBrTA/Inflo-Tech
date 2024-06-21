@@ -1,0 +1,64 @@
+﻿@model UserManagement.Web.Models.Users.ViewUser
+
+@{
+    var model = Model;
+}
+
+<h2 class="mb-3">View User</h2>
+
+
+<form asp-action="ViewUser">
+    <div class="mb-3">
+        <label class="form-label">Forename</label>
+        <input class="form-control" name="Forename" disabled
+               value="@Model.Forename" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Surname</label>
+        <input class="form-control" asp-for="Surname" value="@Model.Surname" disabled>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input class="form-control" asp-for="DateOfBirth" value="@Model.DateOfBirth" disabled>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input class="form-control" asp-for="Email" value="@Model.Email" disabled>
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" class="form-check-input" asp-for="IsActive" value="@Model.IsActive" disabled>
+        <label class="form-label">Is Active</label>
+    </div>
+
+</form>
+
+@if (Model.LogList.Count() > 0) {
+
+    <h2 class="my-3">User Log</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">UserId</th>
+                <th scope="col">LogType</th>
+                <th scope="col">LogMessage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model.LogList)
+            {
+                <tr>
+                    <td>@log.UserId</td>
+                    <td>@log.LogType</td>
+                    <td>@log.LogMessage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+
+<div>
+    <a asp-controller="Users" asp-action="Index" class="btn btn-primary"> Back to List </a>
+</div>
+
