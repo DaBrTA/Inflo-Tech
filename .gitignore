@@ -246,3 +246,4 @@ ModelManifest.xml
 
 # Inflo Custom Ignores
 **/*.js.map
+/UserManagement.Database/UserManagement.Database.jfm
